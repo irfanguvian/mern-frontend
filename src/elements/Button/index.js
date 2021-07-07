@@ -88,6 +88,7 @@ Button.propTypes = {
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
   isExternal: propTypes.bool,
+  isPrimary: propTypes.bool,
   isSmall: propTypes.bool,
   isLarge: propTypes.bool,
   isBlock: propTypes.bool,

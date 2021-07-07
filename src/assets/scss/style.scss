@@ -67,11 +67,14 @@
  }
 
 }
-
+ .text-gray-500{
+  color: $gray-500;
+ }
 header{
   border-bottom: 1px solid $gray-200;
   width: 100%;
   position: relative;
+  margin-bottom: 30px;
   .navbar{
    height: 80px;
 
