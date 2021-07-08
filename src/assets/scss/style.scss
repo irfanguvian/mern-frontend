@@ -7,6 +7,7 @@
 
 // scss-docs-start import-stack
 // Configuration
+@import "colorVariabels";
 @import "functions";
 @import "variables";
 @import "mixins";
@@ -221,4 +222,7 @@ section{
   }
 }
 
-
+.testimonial-hero,.testimonial-hero img{
+  width: 365px;
+  height: 500px;
+}
