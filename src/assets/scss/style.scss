@@ -53,6 +53,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 
+a{
+  text-decoration: none;
+  &:hover{
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+
 .brand-text-icon{
  font-size: 26px;
  font-weight: 500;
@@ -69,6 +77,9 @@
 }
  .text-gray-500{
   color: $gray-500;
+ }
+  .text-gray-800{
+  color: $gray-800;
  }
 header{
   border-bottom: 1px solid $gray-200;
@@ -91,8 +102,9 @@ header{
           color: $gray-900;
           padding-left: 1rem;
           padding-right: 1rem;
+         
           &:hover{
-           text-decoration: underline !important;
+            text-decoration: underline;
           }
       }
      }
