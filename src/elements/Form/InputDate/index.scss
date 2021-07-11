@@ -3,6 +3,9 @@
 .input-date{
  .input-group{
   background-color: $white;
+  .bg-gray-900{
+   background-color: $gray-900;
+  }
   .input-group-text{
    pointer-events: none;
    border: 0;
