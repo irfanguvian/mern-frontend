@@ -8,7 +8,7 @@ import 'react-date-range/dist/styles.css' // main style file
 import 'react-date-range/dist/theme/default.css' // theme css file
 
 import IconCalender from 'assets/images/icons/icon-calendar.svg'
-import { formatDate } from 'tough-cookie'
+import formatDate from 'utils/formatDate'
 
 export default function Date(props) {
   const { value, placeholder, name } = props
@@ -21,7 +21,7 @@ export default function Date(props) {
         name: name,
       },
     }
-    props.onchange(target)
+    props.onChange(target)
   }
 
   useEffect(() => {
@@ -72,7 +72,7 @@ export default function Date(props) {
           <div className='date-range-wrapper'>
             <DateRange
               editableDateInputs={true}
-              onchange={dataPickerChange}
+              onChange={dataPickerChange}
               moveRangeOnFirstSelection={false}
               onRangeFocusChange={check}
               ranges={[value]}
@@ -86,7 +86,7 @@ export default function Date(props) {
 
 Date.propTypes = {
   value: propTypes.object,
-  onchange: propTypes.func,
+  onChange: propTypes.func,
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
 }

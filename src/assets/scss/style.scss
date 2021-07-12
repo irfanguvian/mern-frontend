@@ -62,6 +62,11 @@ a{
   }
 }
 
+button{
+  padding-left: auto !important;
+  text-align: center !important;
+}
+
 .brand-text-icon{
  font-size: 26px;
  font-weight: 500;
@@ -69,6 +74,7 @@ a{
  text-decoration: none;
  color: $primary;
  &:hover{
+   text-decoration: none;
   color: $primary;
  }
  .text-gray-900{
@@ -76,11 +82,20 @@ a{
  }
 
 }
+ .text-gray-400{
+  color: $gray-400;
+ }
  .text-gray-500{
   color: $gray-500;
  }
   .text-gray-800{
   color: $gray-800;
+ }
+   .text-gray-900{
+  color: $gray-900;
+ }
+ .text-teal{
+   color:$teal
  }
 header{
   border-bottom: 1px solid $gray-200;
@@ -131,8 +146,10 @@ section{
 
 
 .card{
-  height: 100%;
-   border-radius: 15px;
+  &.bordered{
+    border: 1px solid $gray-200;
+  }
+  border-radius: 15px;
   .tag{
     z-index: 3;
     font-size: 0.875rem;
@@ -251,5 +268,12 @@ footer{
     margin: 50px 0;
     font-weight: 300;
     color: $gray-500;
+  }
+}
+
+main{
+  p{
+    color : $gray-500;
+    font-weight: 300;
   }
 }
