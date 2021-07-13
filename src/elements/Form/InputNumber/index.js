@@ -12,9 +12,6 @@ export default function Number(props) {
     if (prefix) value = value.replace(prefix)
     if (suffix) value = value.replace(suffix)
 
-    const patternNumeric = new RegExp('[0-9]*')
-    const isNumeric = patternNumeric.test(value)
-
     if (+value <= max && +value >= min) {
       props.onChange({
         target: {

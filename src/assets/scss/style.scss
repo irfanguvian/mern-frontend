@@ -55,6 +55,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 
 a{
+   
   text-decoration: none;
   &:hover{
     text-decoration: underline;
@@ -63,6 +64,7 @@ a{
 }
 
 button{
+ 
   padding-left: auto !important;
   text-align: center !important;
 }
@@ -82,6 +84,7 @@ button{
  }
 
 }
+
  .text-gray-400{
   color: $gray-400;
  }
@@ -94,9 +97,13 @@ button{
    .text-gray-900{
   color: $gray-900;
  }
+  .bg-gray-900{
+  background-color: $gray-900;
+ }
  .text-teal{
    color:$teal
  }
+ 
 header{
   border-bottom: 1px solid $gray-200;
   width: 100%;

@@ -20,6 +20,9 @@ export default function Button(props) {
   if (props.hasShadow) {
     className.push('btn-shadow')
   }
+  if (props.isLight) {
+    className.push('btn-light')
+  }
 
   const onClick = () => {
     if (props.onClick) props.onClick()
@@ -92,5 +95,6 @@ Button.propTypes = {
   isSmall: propTypes.bool,
   isLarge: propTypes.bool,
   isBlock: propTypes.bool,
+  isLight: propTypes.bool,
   hasShadow: propTypes.bool,
 }
