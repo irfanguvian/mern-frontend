@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import propTypes from 'prop-types'
-import './index.scss'
+import React, { useState } from "react";
+import propTypes from "prop-types";
+import "./index.scss";
 
 export default function Text(props) {
   const {
@@ -13,12 +13,12 @@ export default function Text(props) {
     outerClassName,
     inputClassName,
     errorResponse,
-  } = props
+  } = props;
 
-  const [hasError, setHasError] = useState(null)
-  let pattern = ''
-  if (type === 'email') pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  if (type === 'tel') pattern = '[0-9]*'
+  const [hasError, setHasError] = useState(null);
+  let pattern = "";
+  if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (type === "tel") pattern = "[0-9]*";
 
   const onChange = (event) => {
     const target = {
@@ -26,54 +26,54 @@ export default function Text(props) {
         name: name,
         value: event.target.value,
       },
+    };
+
+    if (type === "email") {
+      if (!pattern.test(event.target.value)) setHasError(errorResponse);
+      else setHasError(null);
     }
 
-    if (type === 'email') {
-      if (!pattern.test(event.target.value)) setHasError(errorResponse)
-      else setHasError(null)
-    }
-
-    if (type === 'tel') {
-      if (event.target.validity.valid) props.onChange(target)
+    if (type === "tel") {
+      if (event.target.validity.valid) props.onChange(target);
     } else {
-      props.onChange(target)
+      props.onChange(target);
     }
-  }
+  };
 
   return (
-    <div className={['input-text mb-3', outerClassName].join(' ')}>
-      <div className='input-group'>
+    <div className={["input-text mb-3", outerClassName].join(" ")}>
+      <div className="input-group">
         {prepend && (
-          <div className='input-group-prepend bg-gray-900'>
-            <span className='input-group-text'>{prepend}</span>
+          <div className="input-group-prepend bg-gray-900">
+            <span className="input-group-text">{prepend}</span>
           </div>
         )}
         <input
           name={name}
           type={type}
           pattern={pattern}
-          className={['form-control', inputClassName].join(' ')}
+          className={["form-control", inputClassName].join(" ")}
           value={value}
           placeholder={placeholder}
           onChange={onChange}
         />
         {append && (
-          <div className='input-group-append bg-gray-900'>
-            <span className='input-group-text'>{append}</span>
+          <div className="input-group-append bg-gray-900">
+            <span className="input-group-text">{append}</span>
           </div>
         )}
       </div>
-      {hasError && <span className='error-helper'>{hasError}</span>}
+      {hasError && <span className="error-helper">{hasError}</span>}
     </div>
-  )
+  );
 }
 
 Text.defaultProps = {
-  type: 'text',
-  pattern: '',
-  placeholder: 'Please type here ...',
-  errorResponse: 'Please match the requested format.',
-}
+  type: "text",
+  pattern: "",
+  placeholder: "Please type here ...",
+  errorResponse: "Please match the requested format.",
+};
 
 Text.propTypes = {
   name: propTypes.string.isRequired,
@@ -85,4 +85,4 @@ Text.propTypes = {
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
   inputClassName: propTypes.string,
-}
+};

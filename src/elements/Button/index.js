@@ -85,6 +85,7 @@ export default function Button(props) {
 Button.propTypes = {
   type: propTypes.oneOf(['button', 'link']), // kaya enumerasi
   onClick: propTypes.func,
+  style: propTypes.string,
   target: propTypes.string,
   href: propTypes.string,
   className: propTypes.string,
