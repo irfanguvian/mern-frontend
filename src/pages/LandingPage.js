@@ -9,44 +9,44 @@ import Footer from "parts/Footer";
 import { fetchPage } from "store/actions/page";
 
 class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-    this.refMostPicked = React.createRef();
-  }
+	constructor(props) {
+		super(props);
+		this.refMostPicked = React.createRef();
+	}
 
-  componentDidMount() {
-    window.title = "Staycation | Home";
-    window.scrollTo(0, 0);
+	componentDidMount() {
+		window.title = "Staycation | Home";
+		window.scrollTo(0, 0);
 
-    if (!this.props.page.landingPage) {
-      this.props.fetchPage(
-        `http://localhost:5000/api/v1/landing-page`,
-        "landingPage"
-      );
-    }
-  }
+		if (!this.props.page.landingPage) {
+			this.props.fetchPage(
+				`http://localhost:8000/api/v1/landing-page`,
+				"landingPage",
+			);
+		}
+	}
 
-  render() {
-    const { landingPage } = this.props.page;
-    if (!this.props.page.hasOwnProperty("landingPage")) return null;
-    return (
-      <>
-        <Header {...this.props}></Header>
-        <Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
-        <MostPicked
-          refMostPicked={this.refMostPicked}
-          data={landingPage.mostPicked}
-        />
-        <Categories data={landingPage.category} />
-        <Testimonial data={landingPage.testimonial} />
-        <Footer />
-      </>
-    );
-  }
+	render() {
+		const { landingPage } = this.props.page;
+		if (!this.props.page.hasOwnProperty("landingPage")) return null;
+		return (
+			<>
+				<Header {...this.props}></Header>
+				<Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
+				<MostPicked
+					refMostPicked={this.refMostPicked}
+					data={landingPage.mostPicked}
+				/>
+				<Categories data={landingPage.category} />
+				<Testimonial data={landingPage.testimonial} />
+				<Footer />
+			</>
+		);
+	}
 }
 
 const mapStateToProps = (state) => ({
-  page: state.page,
+	page: state.page,
 });
 
 export default connect(mapStateToProps, { fetchPage })(LandingPage);
